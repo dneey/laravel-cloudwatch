@@ -1,5 +1,5 @@
 {
-  "name": "dneey/cloudwatch",
+  "name": "dneey/laravel-cloudwatch",
   "description": "Quickly add cloudwatch to your laravel application.",
   "type": "library",
   "require": {
