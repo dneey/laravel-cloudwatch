@@ -3,7 +3,7 @@
 return [
     'cloudwatch' => [
         'driver' => 'custom',
-        'via' => \App\Services\Logging\CloudWatchLoggerFactory::class,
+        'via' => \Dneey\Cloudwatch\CloudWatchLoggerFactory::class,
         'sdk' => [
             'region' => env('AWS_REGION', 'us-west-1'),
             'version' => env('AWS_VERSION', 'latest'),
