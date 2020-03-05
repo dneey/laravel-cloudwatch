@@ -1,0 +1,19 @@
+{
+  "name": "dneey/cloudwatch",
+  "description": "Quickly add cloudwatch to your laravel application.",
+  "type": "library",
+  "require": {
+    "maxbanton/cwh": "^2.0"
+  },
+  "authors": [
+    {
+      "name": "David Nee Yartey",
+      "email": "yarteyd@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Dneey\\Cloudwatch\\": "src"
+    }
+  }
+}
