@@ -5,8 +5,8 @@ return [
         'driver' => 'custom',
         'via' => \App\Services\Logging\CloudWatchLoggerFactory::class,
         'sdk' => [
-            'region' => env('AWS_CLOUD_WATCH_REGION', 'us-west-1'),
-            'version' => env('AWS_CLOUD_WATCH_VERSION', 'latest'),
+            'region' => env('AWS_REGION', 'us-west-1'),
+            'version' => env('AWS_VERSION', 'latest'),
             'credentials' => [
                 'key' => env('AWS_KEY'),
                 'secret' => env('AWS_SECRET'),
