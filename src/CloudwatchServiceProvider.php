@@ -8,6 +8,7 @@ class CloudwatchServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        config(['logging.channel' => config('cloudwatch')]);
     }
     public function register()
     {
