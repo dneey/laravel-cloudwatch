@@ -13,14 +13,14 @@
   ],
   "autoload": {
     "psr-4": {
-      "Dneey\\Cloudwatch\\": "src"
+      "Dneey\\CloudWatch\\": "src"
     }
   },
   "extra": {
     "laravel": {
-        "providers": [
-            "Dneey\\Cloudwatch\\CloudwatchServiceProvider"
-        ]
+      "providers": [
+        "Dneey\\CloudWatch\\CloudWatchServiceProvider"
+      ]
     }
-}
+  }
 }

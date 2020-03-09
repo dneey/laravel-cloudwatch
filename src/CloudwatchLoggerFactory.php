@@ -1,6 +1,6 @@
 <?php
 
-namespace Dneey\Cloudwatch;
+namespace Dneey\CloudWatch;
 
 use Aws\CloudWatchLogs\CloudWatchLogsClient;
 use Maxbanton\Cwh\Handler\CloudWatch;
