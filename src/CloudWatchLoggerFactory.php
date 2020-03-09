@@ -5,7 +5,6 @@ namespace Dneey\CloudWatch;
 use Aws\CloudWatchLogs\CloudWatchLogsClient;
 use Maxbanton\Cwh\Handler\CloudWatch;
 use Monolog\Formatter\JsonFormatter;
-use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 use Monolog\Processor\IntrospectionProcessor;
 use Monolog\Processor\WebProcessor;
@@ -37,9 +36,10 @@ class CloudWatchLoggerFactory
 
         // Days to keep logs, 14 by default. Set to `null` to allow indefinite retention.
         $retentionDays = $config["retention"];
+        $batch = $config["batch"];
 
         // Instantiate handler (tags are optional)
-        $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, 10000, $tags);
+        $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, $batch, $tags);
         $handler->setFormatter(new JsonFormatter());
         $handler->pushProcessor(new IntrospectionProcessor(Logger::API, ["Illuminate\\"]));
         $handler->pushProcessor(new WebProcessor());
