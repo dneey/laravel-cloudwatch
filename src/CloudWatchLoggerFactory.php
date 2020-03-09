@@ -40,9 +40,7 @@ class CloudWatchLoggerFactory
 
         // Instantiate handler (tags are optional)
         $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, 10000, $tags);
-
-        $amazonFormatter = new LineFormatter("%channel%: %level_name%: %message% %context% %extra%", null, false, true);
-        $handler->setFormatter(new JsonFormatter($amazonFormatter));
+        $handler->setFormatter(new JsonFormatter());
         $handler->pushProcessor(new IntrospectionProcessor(Logger::API, ["Illuminate\\"]));
         $handler->pushProcessor(new WebProcessor());
         $handler->pushProcessor(function ($entry) {
