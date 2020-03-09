@@ -11,7 +11,7 @@ class CloudWatchServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/config/cloudwatch',
+            __DIR__ . '/config/cloudwatch.php',
             'logging.channels'
         );
     }
