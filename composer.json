@@ -3,6 +3,7 @@
   "description": "Quickly add cloudwatch to your laravel application.",
   "type": "library",
   "require": {
+    "php": "^7.2",
     "maxbanton/cwh": "^2.0"
   },
   "authors": [
