@@ -39,16 +39,14 @@ class CloudWatchLoggerFactory
 
         $batch = $config["batch"];
 
-        $extra = $config["extra"];
-
         // Instantiate handler (tags are optional)
         $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, $batch, $tags);
         $handler->setFormatter(new JsonFormatter());
         $handler->pushProcessor(new IntrospectionProcessor(Logger::API, ["Illuminate\\"]));
         $handler->pushProcessor(new WebProcessor());
-        $handler->pushProcessor(function ($entry) use ($extra) {
+        $handler->pushProcessor(function ($entry) use ($config) {
             $entry['extra']['requestId'] = @$_SESSION['requestId'];
-            $entry['extra']['request'] = $extra['log_requests'] ? app('Illuminate\Http\Request')->except($extra['log_requests_except']) : [];
+            $entry['extra']['request'] = $config['log_requests'] ? app('Illuminate\Http\Request')->except($config['log_requests_except']) : [];
             return $entry;
         });
 
