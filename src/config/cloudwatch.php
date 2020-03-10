@@ -1,12 +1,5 @@
 <?php
 
-$extra = [
-
-    'log_requests' => env('LOG_REQUEST_PARAMS', true),
-
-    'log_requests_except' => env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'),
-];
-
 return [
     'cloudwatch' => [
 
@@ -59,6 +52,19 @@ return [
 
         'batch' => env('CLOUD_WATCH_BATCH_SIZE', '10000'),
 
-        $extra,
+        /*
+         * Set "log_requests" to false to prevent it from logging your requests
+         * This is defaulted to true
+         * options: tru,false
+         */
+        'log_requests' => env('LOG_REQUEST_PARAMS', true),
+
+        /*
+         * Set "log_requests_except" to a string of fields that should not be logged in the incoming request
+         * This is defaulted to "password and password_confirmation"
+         *
+         * Eg: LOG_REQUESTS_EXCEPT="password, password_confirmation, pin, etc"
+         */
+        'log_requests_except' => env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'),
     ],
 ];
