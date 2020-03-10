@@ -1,6 +1,6 @@
 # AWS CloudWatch Logger for Laravel
 
-Implementation of [maxbanton AWS handler for monolog.](https://github.com/maxbanton/cwh) in [Laravel](https://github.com/laravel/laravel).
+Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbanton/cwh) in [Laravel](https://github.com/laravel/laravel).
 
 ## Requirements
 
@@ -22,20 +22,20 @@ $ composer require dneey/laravel-cloudwatch
 
 ## Basic Usage
 
-Drop this in your application's .env file with your correct AWS credentials.
+1. Drop this in your application's .env file with your correct AWS credentials.
 
 ```php
 AWS_KEY=aws-key
 AWS_SECRET=aws-secret
 ```
 
-and update the log channel to cloudwatch.
+1. Update the log channel in your .env file to 'cloudwatch'.
 
 ```php
 LOG_CHANNEL=cloudwatch
 ```
 
-That's it!
+That's it! You can now log to AWS CloudWatch.
 
 ## Example
 
