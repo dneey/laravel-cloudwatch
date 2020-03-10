@@ -1,11 +1,34 @@
-# laravel-cloudwatch-logger
-Easily pipe your laravel logs to cloudwatch.
+# AWS CloudWatch Logger for Laravel
 
+Implementation of [maxbanton AWS handler for monolog.](https://github.com/maxbanton/cwh) in [Laravel](https://github.com/laravel/laravel).
 
-## Step 1(Installation)
+## Requirements
 
-composer require dneey/laravel-cloudwatch-logger
+- PHP ^7.1.3
+- Laravel >=5.7
 
+## Features
 
-## Step 2
+- Automatically include incoming request parameters on every log.
+- Included a "requestId" on every log to make it easier to search through logs of a request on cloudwatch.
 
+## Installation
+
+Install the latest version with [Composer](https://getcomposer.org/) by running
+
+```bash
+$ composer require dneey/laravel-cloudwatch
+```
+
+## Basic Usage
+
+Drop this in your application's .env file.
+
+```php
+AWS_KEY=aws-key
+AWS_SECRET=aws-secret
+```
+
+## AWS
+
+For AWS IAM and policy examples, kindly visit [maxbanton AWS handler for monolog.](https://github.com/maxbanton/cwh)
