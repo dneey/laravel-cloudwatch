@@ -22,7 +22,7 @@ $ composer require dneey/laravel-cloudwatch
 
 ## Basic Usage
 
-1. Drop this in your application's .env file with your correct `AWS credentials`.
+1. Drop this in your application's `.env` file with your correct AWS credentials.
 
 ```php
 AWS_KEY=aws-key
