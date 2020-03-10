@@ -29,7 +29,19 @@ AWS_KEY=aws-key
 AWS_SECRET=aws-secret
 ```
 
+and update the log chennel to cloudwatch.
+
+```php
+LOG_CHANNEL=cloudwatch
+```
+
 That's it!
+
+## Example
+
+```php
+Log::info('Awesome! We are now logging to cloudwatch.');
+```
 
 ## AWS
 
