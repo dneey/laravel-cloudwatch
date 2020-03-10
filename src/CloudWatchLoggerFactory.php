@@ -12,7 +12,7 @@ use Monolog\Processor\WebProcessor;
 class CloudWatchLoggerFactory
 {
     /**
-     * Create a custom Monolog instance.
+     * Custom Monolog instance.
      *
      * @param  array  $config
      * @return \Monolog\Logger
@@ -36,15 +36,19 @@ class CloudWatchLoggerFactory
 
         // Days to keep logs, 14 by default. Set to `null` to allow indefinite retention.
         $retentionDays = $config["retention"];
+
         $batch = $config["batch"];
+
+        $extra = $config["extra"];
 
         // Instantiate handler (tags are optional)
         $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, $batch, $tags);
         $handler->setFormatter(new JsonFormatter());
         $handler->pushProcessor(new IntrospectionProcessor(Logger::API, ["Illuminate\\"]));
         $handler->pushProcessor(new WebProcessor());
-        $handler->pushProcessor(function ($entry) {
+        $handler->pushProcessor(function ($entry) use ($extra) {
             $entry['extra']['requestId'] = @$_SESSION['requestId'];
+            $entry['extra']['request'] = $extra['log_requests'] ? app('Illuminate\Http\Request')->except($extra['log_requests_except']) : [];
             return $entry;
         });
 
