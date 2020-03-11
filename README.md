@@ -63,7 +63,7 @@ CLOUD_WATCH_RETENTION_DAYS=14
 5. You can disable cloudwatch from logging your request params by setting `LOG_REQUEST_PARAMS` to false in the .env file. By default all request params will be logged except passwords and password confirmations.
 
 ```php
-LOG_REQUEST_PARAMS=false
+LOG_REQUEST_PARAMS=true
 ```
 
 6. You can choose what request parameters to ignore by specifying the comma separated keys in your env file.
