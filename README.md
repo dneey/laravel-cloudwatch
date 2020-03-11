@@ -66,7 +66,7 @@ CLOUD_WATCH_RETENTION_DAYS=14
 LOG_REQUEST_PARAMS=true
 ```
 
-6. You can choose what request parameters to ignore by specifying the comma separated keys in your env file.
+6. You can ignore any request parameter by adding a `LOG_REQUESTS_EXCEPT` entry to your .env file. The value should contain a comma separated string of request keys you would like to exclude from your logs.
 
 ```php
 LOG_REQUESTS_EXCEPT="password, password_confirmation, 'image"
