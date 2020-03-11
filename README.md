@@ -48,7 +48,7 @@ You can choose to overide the defaults and configure your cloudwatch log group n
 
 ```php
 CLOUD_WATCH_GROUP_NAME=project-name
-CLOUD_WATCH_STREAM_NAME=rpay-v2-api
+CLOUD_WATCH_STREAM_NAME=project-name-env
 ```
 
 If not set,
