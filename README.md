@@ -70,7 +70,7 @@ CLOUD_WATCH_RETENTION_DAYS=14
 ## Example
 
 ```php
-Log::info('Awesome! We are now logging to cloudwatch from Laravel.');
+Log::info('Awesome! You are now logging to cloudwatch from Laravel.');
 ```
 
 ## AWS
