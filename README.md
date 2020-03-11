@@ -44,24 +44,24 @@ That's it! You can now log to AWS CloudWatch.
 
 ## Extra Configurations
 
-You can choose to overide the defaults and configure your cloudwatch log group name and stream name in your .env file.
+1. You can choose to overide the defaults and configure your cloudwatch log group name and stream name in your .env file.
 
 ```php
 CLOUD_WATCH_GROUP_NAME=project-name
 CLOUD_WATCH_STREAM_NAME=project-name-env
 ```
 
-If not set,
-the value in your `APP_NAME` will be used as the log group name and the value
-of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
+2. If not set,
+   the value in your `APP_NAME` will be used as the log group name and the value
+   of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
 
-You can specify your log level eg. API, DEBUG.
+3. You can specify your log level eg. API, DEBUG.
 
 ```php
 CLOUD_WATCH_LEVEL=API
 ```
 
-You can also specify how long the logs stay in cloudwatch in days.
+4. You can also specify how long the logs stay in cloudwatch in days.
 
 ```php
 CLOUD_WATCH_RETENTION_DAYS=30
