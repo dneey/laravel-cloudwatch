@@ -41,7 +41,7 @@ That's it! You can now log to AWS CloudWatch.
 
 ## Extra Configurations
 
-1. You can override the defaults and configure your cloudwatch `log group name` and `stream name` in your .env file. If not set, the value of your `APP_NAME` will be used as the log group name and the value of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
+1. You can configure your cloudwatch `log group name` and `stream name` in your .env file. If not set, the value of your `APP_NAME` will be used as the log group name and the value of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
 
 ```php
 CLOUD_WATCH_GROUP_NAME=project-name
