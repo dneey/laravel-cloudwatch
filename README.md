@@ -26,8 +26,11 @@ $ composer require dneey/laravel-cloudwatch
 
 ```php
 AWS_KEY=aws-key
+
 AWS_SECRET=aws-secret
+
 AWS_VERSION=latest
+
 AWS_REGION=eu-west-1
 ```
 
