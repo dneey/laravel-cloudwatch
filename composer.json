@@ -9,8 +9,8 @@
     "cloudwatch"
   ],
   "require": {
-    "php": "^7.1.3",
-    "maxbanton/cwh": "^1.1"
+    "php": "^7.2",
+    "maxbanton/cwh": "^2.0.0"
   },
   "authors": [
     {
