@@ -53,7 +53,7 @@ CLOUD_WATCH_STREAM_NAME=project-name-env
 
 If not set,
 the value in your `APP_NAME` will be used as the log group name and the value
-of your `APP_NAME-APP_ENV`(Your application name and environment) will be used as your log stream name.
+of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
 
 You can specify your log level eg. API, DEBUG.
 
