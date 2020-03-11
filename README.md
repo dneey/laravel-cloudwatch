@@ -40,7 +40,7 @@ That's it! You can now log to AWS CloudWatch.
 ## Example
 
 ```php
-Log::info('Awesome! We are now logging to cloudwatch.');
+Log::info('Awesome! We are now logging to cloudwatch from Laravel.');
 ```
 
 ## AWS
