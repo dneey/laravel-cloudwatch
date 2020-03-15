@@ -2,6 +2,7 @@
   "name": "dneey/laravel-cloudwatch",
   "description": "Quickly add cloudwatch to your laravel application.",
   "type": "library",
+  "license": "MIT",
   "require": {
     "php": ">=7.1.3",
     "maxbanton/cwh": ">=1.1"
