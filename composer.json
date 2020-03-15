@@ -1,6 +1,6 @@
 {
   "name": "dneey/laravel-cloudwatch",
-  "description": "Quickly add cloudwatch to your laravel application.",
+  "description": "Quickly add cloudwatch logging to your laravel application.",
   "type": "library",
   "license": "MIT",
   "require": {
