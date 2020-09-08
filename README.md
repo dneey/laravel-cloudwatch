@@ -54,7 +54,7 @@ CLOUD_WATCH_STREAM_NAME=project-name-env
 2. You can specify your log level eg. API, DEBUG.
 
 ```php
-CLOUD_WATCH_LEVEL=API
+CLOUD_WATCH_LEVEL=INFO
 ```
 
 3. You can also specify how long the logs stay in cloudwatch in days. The default is `14` days.
