@@ -48,7 +48,7 @@ CLOUD_WATCH_STREAM_NAME=project-name-env
 ```
 
 
-2.    You can specify your log level eg. API, DEBUG.
+2.    You can specify your log level eg. INFO,CRITICAL,DEBUG,API etc.
 
 ```php
 CLOUD_WATCH_LEVEL=INFO
