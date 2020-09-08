@@ -22,19 +22,15 @@ $ composer require dneey/laravel-cloudwatch
 
 ## Basic Usage
 
-1. Drop this in your application's `.env` file with your correct AWS credentials.
+Drop this in your application's `.env` file with your correct AWS credentials.
 
 ```php
+LOG_CHANNEL=cloudwatch
+
 AWS_KEY=aws-key
 AWS_SECRET=aws-secret
 AWS_VERSION=latest
 AWS_REGION=eu-west-1
-```
-
-2. Update the log channel in your .env file to `cloudwatch`.
-
-```php
-LOG_CHANNEL=cloudwatch
 ```
 
 That's it!
