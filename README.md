@@ -4,7 +4,7 @@ Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbant
 
 ## Requirements
 
-- PHP ^7.1.3
+- PHP >=7.1.3
 - Laravel >=5.7
 
 ## Features
@@ -30,7 +30,7 @@ LOG_CHANNEL=cloudwatch
 AWS_KEY=aws-key
 AWS_SECRET=aws-secret
 AWS_VERSION=latest
-AWS_REGION=eu-west-1
+AWS_REGION=aws-region
 ```
 
 That's it!
@@ -40,35 +40,36 @@ Log::info('You are now logging to cloudwatch');
 
 ## Extra Configurations
 
-1. You can configure your cloudwatch `log group name` and `stream name` in your .env file. If not set, the value of your `APP_NAME` will be used as the log group name and the value of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
+1.    You can configure your cloudwatch `log group name` and `stream name` in your .env file. If not set, the value of your `APP_NAME` will be used as the log group name and the value of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
 
 ```php
 CLOUD_WATCH_GROUP_NAME=project-name
 CLOUD_WATCH_STREAM_NAME=project-name-env
 ```
 
-2. You can specify your log level eg. API, DEBUG.
+
+2.    You can specify your log level eg. API, DEBUG.
 
 ```php
 CLOUD_WATCH_LEVEL=INFO
 ```
 
-3. You can also specify how long the logs stay in cloudwatch in days. The default is `14` days.
+3.    You can also specify how long the logs stay in cloudwatch in days. The default is `14` days.
 
 ```php
 CLOUD_WATCH_RETENTION_DAYS=14
 ```
 
-4. You can disable cloudwatch from logging your request params by setting `LOG_REQUEST_PARAMS` to false in the .env file. By default all request params will be logged except passwords and password confirmations.
+4.    By default all request params will be logged except passwords and password confirmations. To change this, set `LOG_REQUEST_PARAMS` to false in the .env file. 
 
 ```php
-LOG_REQUEST_PARAMS=true
+LOG_REQUEST_PARAMS=false
 ```
 
-5. You can ignore any request parameter by adding a `LOG_REQUESTS_EXCEPT` entry to your .env file. The value should contain a comma separated string of request keys you would like to exclude from your logs.
+5.    You can ignore any request parameter by adding a `LOG_REQUESTS_EXCEPT` entry to your .env file. The value should contain a comma separated string of fields to exclude from your logs.
 
 ```php
-LOG_REQUESTS_EXCEPT="password, password_confirmation, 'image"
+LOG_REQUESTS_EXCEPT="password, password_confirmation, image"
 ```
 
 ## Example
