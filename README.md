@@ -37,7 +37,10 @@ AWS_REGION=eu-west-1
 LOG_CHANNEL=cloudwatch
 ```
 
-That's it! You can now log to AWS CloudWatch.
+That's it!
+```php
+Log::info('You are now logging to cloudwatch');
+```
 
 ## Extra Configurations
 
