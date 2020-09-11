@@ -65,6 +65,6 @@ return [
          *
          * Eg: LOG_REQUESTS_EXCEPT="password, password_confirmation, pin, etc"
          */
-        'log_requests_except' => env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'),
+        'log_requests_except' => array_map('trim', explode(',', env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'))),
     ],
 ];
