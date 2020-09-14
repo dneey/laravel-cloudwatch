@@ -29,7 +29,6 @@ LOG_CHANNEL=cloudwatch
 
 AWS_ACCESS_KEY_ID=aws-key
 AWS_SECRET_ACCESS_KEY=aws-secret
-AWS_VERSION=latest
 AWS_DEFAULT_REGION=aws-region
 ```
 
