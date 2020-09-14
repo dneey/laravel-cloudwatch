@@ -27,7 +27,7 @@ Drop this in your application's `.env` file with your correct AWS credentials.
 ```php
 LOG_CHANNEL=cloudwatch
 
-AWS_KEY=aws-key
+AWS_ACCESS_KEY_ID=aws-key
 AWS_SECRET_ACCESS_KEY=aws-secret
 AWS_VERSION=latest
 AWS_DEFAULT_REGION=aws-region
