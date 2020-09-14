@@ -4,8 +4,8 @@ Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbant
 
 ## Requirements
 
-- PHP ^7.1.3
-- Laravel ^5.7
+- PHP ^7.2.0
+- Laravel ^6.0
 
 ## Features
 
