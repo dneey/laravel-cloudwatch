@@ -19,40 +19,25 @@ class CloudWatchLoggerFactory
      */
     public function __invoke(array $config)
     {
-        // @session_start;
-        $_SESSION['requestId'] = uniqid('', true);
-        $sdkParams = $config["sdk"];
-        $tags = $config["tags"] ?? [];
-        $name = $config["name"] ?? 'cloudwatch';
-
-        // Instantiate AWS SDK CloudWatch Logs Client
-        $client = new CloudWatchLogsClient($sdkParams);
-
-        // Log group name, will be created if none
-        $groupName = $config['group_name'];
-
-        // Log stream name, will be created if none
-        $streamName = $config['stream_name'];
-
-        // Days to keep logs, 14 by default. Set to `null` to allow indefinite retention.
-        $retentionDays = $config["retention"];
-
-        $batch = $config["batch"];
-
-        // Instantiate handler (tags are optional)
-        $handler = new CloudWatch($client, $groupName, $streamName, $retentionDays, $batch, $tags);
+        $requestId = uniqid('', true) . rand(1000, 9999);
+        $client = new CloudWatchLogsClient($config["sdk"]);
+        $handler = new CloudWatch(
+            $client,
+            $config['group_name'],
+            $config['stream_name'],
+            $config["retention"],
+            $config["batch"],
+            $config["tags"] ?? []
+        );
         $handler->setFormatter(new JsonFormatter());
-        $handler->pushProcessor(new IntrospectionProcessor(Logger::API, ["Illuminate\\"]));
+        $handler->pushProcessor(new IntrospectionProcessor($config['level'], ["Illuminate\\"]));
         $handler->pushProcessor(new WebProcessor());
-        $handler->pushProcessor(function ($entry) use ($config) {
-            $entry['extra']['requestId'] = @$_SESSION['requestId'];
-            $entry['extra']['request'] = $config['log_requests'] ? app('Illuminate\Http\Request')->except($config['log_requests_except']) : [];
+        $handler->pushProcessor(function ($entry) use ($config, $requestId) {
+            $entry['extra']['requestId'] = $requestId;
+            $entry['extra']['requestBody'] = $config['log_requests'] ? app('Illuminate\Http\Request')->except($config['log_requests_except']) : [];
             return $entry;
         });
-
-        // Create a log channel
-        $logger = new Logger($name);
-        // Set handler
+        $logger = new Logger($config["name"]);
         $logger->pushHandler($handler);
 
         return $logger;

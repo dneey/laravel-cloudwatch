@@ -3,6 +3,8 @@
 return [
     'cloudwatch' => [
 
+        'name' => 'cloudwatch',
+
         'driver' => 'custom',
 
         'via' => \Dneey\CloudWatch\CloudWatchLoggerFactory::class,
@@ -44,11 +46,10 @@ return [
 
         /*
          * The "level" refers to the log level to log. It is api by default.
-         * This will log everything indiscriminately.
          *
-         * options: api, debug, info, error
+         * options: API, DEBUG, INFO, ERROR, CRITICAL
          */
-        'level' => env('CLOUD_WATCH_LEVEL', 'api'),
+        'level' => env('CLOUD_WATCH_LEVEL', 'API'),
 
         'batch' => env('CLOUD_WATCH_BATCH_SIZE', '10000'),
 
@@ -65,6 +66,6 @@ return [
          *
          * Eg: LOG_REQUESTS_EXCEPT="password, password_confirmation, pin, etc"
          */
-        'log_requests_except' => env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'),
+        'log_requests_except' => array_map('trim', explode(',', env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'))),
     ],
 ];
