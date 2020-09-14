@@ -3,6 +3,8 @@
 return [
     'cloudwatch' => [
 
+        'name' => 'cloudwatch',
+
         'driver' => 'custom',
 
         'via' => \Dneey\CloudWatch\CloudWatchLoggerFactory::class,
@@ -44,7 +46,6 @@ return [
 
         /*
          * The "level" refers to the log level to log. It is api by default.
-         * This will log everything indiscriminately.
          *
          * options: API, DEBUG, INFO, ERROR, CRITICAL
          */
