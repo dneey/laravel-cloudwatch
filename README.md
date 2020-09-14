@@ -10,7 +10,7 @@ Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbant
 ## Features
 
 - Includes incoming request parameters on every log.
-- Includes a `requestId` on every log to narrow down search to a particular request on cloudwatch.
+- Includes a `requestId` on every log to narrow down search results to a particular request's lifecycle.
 
 ## Installation
 
