@@ -43,20 +43,20 @@ Log::info('You are now logging to cloudwatch');
 - You can configure your cloudwatch `log group name` and `stream name` in your .env file. If not set, the value of your `APP_NAME` will be used as the log group name and the value of your `APP_NAME` and `APP_ENV` will be used as your log stream name.
 
 ```php
-CLOUD_WATCH_GROUP_NAME=project-name
-CLOUD_WATCH_STREAM_NAME=project-name-env
+AWS_CLOUD_WATCH_GROUP_NAME=project-name
+AWS_CLOUD_WATCH_STREAM_NAME=project-name-env
 ```
 
 - Set log level eg. INFO,CRITICAL,DEBUG,API etc.
 
 ```php
-CLOUD_WATCH_LEVEL=INFO
+AWS_CLOUD_WATCH_LEVEL=INFO
 ```
 
 - Set log retention period cloudwatch in days. The default is `14` days.
 
 ```php
-CLOUD_WATCH_RETENTION_DAYS=14
+AWS_CLOUD_WATCH_RETENTION_DAYS=14
 ```
 
 - By default all request params will be logged except passwords and password confirmations. To change this, set `LOG_REQUEST_PARAMS` to false in the .env file.
