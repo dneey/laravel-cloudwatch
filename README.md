@@ -71,6 +71,12 @@ LOG_REQUEST_PARAMS=false
 LOG_REQUESTS_EXCEPT="password, password_confirmation, image"
 ```
 
+- In some cases, your application might not require the use of access keys in your cloudwatch setup. To allow this, set `AWS_CLOUD_WATCH_USE_CREDENTIALS` to false.
+
+```php
+AWS_CLOUD_WATCH_USE_CREDENTIALS=false
+```
+
 ## Example
 
 ```php
