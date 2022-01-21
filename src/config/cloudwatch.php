@@ -1,6 +1,6 @@
 <?php
 
-return [
+$cloudwatchConfig = [
     'cloudwatch' => [
 
         'name' => 'cloudwatch',
@@ -69,3 +69,10 @@ return [
         'log_requests_except' => array_map('trim', explode(',', env('LOG_REQUESTS_EXCEPT', 'password, password_confirmation'))),
     ],
 ];
+
+$shouldNotUseCredentials = env('AWS_CLOUD_WATCH_USE_CREDENTIALS') || true;
+
+if (!$shouldNotUseCredentials) {
+    unset($cloudwatchConfig['cloudwatch']['sdk']['credentials']);
+}
+return $cloudwatchConfig;
