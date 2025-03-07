@@ -17,7 +17,7 @@ Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbant
 Install the latest version with [Composer](https://getcomposer.org/) by running
 
 ```bash
-$ composer require dneey/laravel-cloudwatch
+composer require dneey/laravel-cloudwatch
 ```
 
 ## Basic Usage
