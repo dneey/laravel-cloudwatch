@@ -1,5 +1,12 @@
 # AWS CloudWatch Logger for Laravel
 
+<img width="300" height="300" alt="laravel-cloudwatch" src="https://github.com/user-attachments/assets/ab68fbe0-0abe-48f9-b6b1-42b0f1423d36" />
+
+![Downloads](https://img.shields.io/packagist/dt/dneey/laravel-cloudwatch)
+![Version](https://img.shields.io/packagist/v/dneey/laravel-cloudwatch)
+![License](https://img.shields.io/packagist/l/dneey/laravel-cloudwatch)
+
+
 Implementation of [maxbanton AWS handler for monolog](https://github.com/maxbanton/cwh) in [Laravel](https://github.com/laravel/laravel).
 
 ## Requirements
